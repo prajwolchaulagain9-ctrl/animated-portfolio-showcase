@@ -1,0 +1,80 @@
+import { motion } from "framer-motion";
+import { RotatingWords } from "./RotatingWords";
+import { AnimatedText } from "./AnimatedText";
+import { ArrowDown } from "lucide-react";
+
+export const HeroSection = () => {
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
+      <div className="container mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="mb-6"
+        >
+          <span className="px-4 py-2 rounded-full glass text-sm text-muted-foreground">
+            Welcome to my portfolio
+          </span>
+        </motion.div>
+
+        <AnimatedText
+          words={["Hello,", "I'm", "a"]}
+          className="text-4xl md:text-6xl lg:text-7xl font-bold justify-center mb-4"
+        />
+        
+        <div className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8">
+          <RotatingWords
+            words={["Developer", "Designer", "Creator", "Innovator"]}
+          />
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
+        >
+          I craft beautiful digital experiences with clean code and creative design. 
+          Let's build something amazing together.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.6 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <a
+            href="#projects"
+            className="px-8 py-4 rounded-full font-semibold text-primary-foreground transition-all glow-primary hover:scale-105"
+            style={{ background: "var(--gradient-primary)" }}
+          >
+            View My Work
+          </a>
+          <a
+            href="#contact"
+            className="px-8 py-4 rounded-full font-semibold glass border border-border hover:border-primary transition-all hover:scale-105"
+          >
+            Get In Touch
+          </a>
+        </motion.div>
+
+        <motion.a
+          href="#about"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
+            <ArrowDown className="w-6 h-6 text-muted-foreground" />
+          </motion.div>
+        </motion.a>
+      </div>
+    </section>
+  );
+};
