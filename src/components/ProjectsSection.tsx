@@ -4,7 +4,7 @@ import { ProjectCard } from "./ProjectCard";
 const projects = [
   {
     title: "Customer Churn Prediction",
-    description: "Built a churn model that flagged at-risk customers with SHAP-driven explanations for retention teams.",
+    description: "Academic project exploring churn prediction with machine learning and SHAP for model interpretability.",
     tags: ["Python", "scikit-learn", "Pandas", "SHAP"],
     image: "https://images.unsplash.com/photo-1503389152951-9f343605f61e?w=800&h=600&fit=crop",
     liveUrl: "#",
@@ -12,40 +12,40 @@ const projects = [
   },
   {
     title: "Sales Forecasting Dashboard",
-    description: "End-to-end pipeline with Airflow, Snowflake, and Plotly dashboards to forecast weekly revenue.",
-    tags: ["Airflow", "Snowflake", "Plotly", "dbt"],
+    description: "Self-learning project building a forecasting pipeline with visualization dashboards using public datasets.",
+    tags: ["Python", "Plotly", "Time Series", "Pandas"],
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop",
     liveUrl: "#",
     githubUrl: "#",
   },
   {
     title: "NLP Review Insights",
-    description: "Topic modeling and sentiment analysis on 2M+ product reviews to surface actionable themes.",
-    tags: ["Python", "spaCy", "BERT", "FastAPI"],
+    description: "Capstone project analyzing Amazon reviews using sentiment analysis and topic modeling techniques.",
+    tags: ["Python", "NLTK", "spaCy", "Seaborn"],
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop",
     liveUrl: "#",
     githubUrl: "#",
   },
   {
-    title: "Fraud Detection Stream",
-    description: "Streaming anomaly detection with Kafka features and gradient boosting, monitored via Evidently.",
-    tags: ["Kafka", "LightGBM", "Evidently", "Docker"],
+    title: "Credit Card Fraud Detection",
+    description: "Kaggle competition project using ensemble methods to detect fraudulent transactions with imbalanced data.",
+    tags: ["Python", "XGBoost", "SMOTE", "scikit-learn"],
     image: "https://images.unsplash.com/photo-1454165205744-3b78555e5572?w=800&h=600&fit=crop",
     liveUrl: "#",
     githubUrl: "#",
   },
   {
-    title: "Experimentation Hub",
-    description: "A/B testing playbook with stats engine, sequential testing guards, and uplift reporting UI.",
-    tags: ["Bayesian", "React", "TypeScript", "PostgreSQL"],
+    title: "A/B Test Simulator",
+    description: "Learning project exploring statistical hypothesis testing and A/B test analysis with simulated data.",
+    tags: ["Python", "Statistics", "Scipy", "Matplotlib"],
     image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&h=600&fit=crop",
     liveUrl: "#",
     githubUrl: "#",
   },
   {
-    title: "Geospatial Mobility Analysis",
-    description: "Clustering GPS pings to reveal commute corridors and visualize flows with deck.gl maps.",
-    tags: ["GeoPandas", "deck.gl", "Kepler.gl", "Mapbox"],
+    title: "COVID-19 Data Visualization",
+    description: "Interactive dashboard analyzing pandemic trends across regions using public health datasets.",
+    tags: ["Python", "Plotly", "Dash", "Pandas"],
     image: "https://images.unsplash.com/photo-1470165510427-9a55f0c4b4c1?w=800&h=600&fit=crop",
     liveUrl: "#",
     githubUrl: "#",
@@ -66,7 +66,7 @@ export const ProjectsSection = () => {
             Data <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Case studies across analytics, machine learning, and experimentation that drive measurable impact.
+            Personal and academic projects showcasing my learning journey in data analytics and machine learning.
           </p>
         </motion.div>
 

@@ -1,33 +1,36 @@
 import { motion } from "framer-motion";
-import { SkillBar } from "./SkillBar";
-import { FloatingCard } from "./FloatingCard";
+import { 
+  Code2, Database, BarChart3, TrendingUp, 
+  FileSpreadsheet, GitBranch, Brain, PieChart,
+  Activity, Layers, Beaker, Calculator
+} from "lucide-react";
 
-const skillCategories = [
-  {
-    title: "Analytics & ML",
-    skills: [
-      { name: "Python (Pandas/NumPy)", level: 95 },
-      { name: "scikit-learn / XGBoost", level: 90 },
-      { name: "Experimentation / A/B Stats", level: 88 },
-      { name: "NLP (spaCy/BERT)", level: 84 },
-    ],
-  },
-  {
-    title: "Data Engineering",
-    skills: [
-      { name: "SQL (Postgres/BigQuery)", level: 92 },
-      { name: "dbt / Data Modeling", level: 88 },
-      { name: "Airflow / Orchestration", level: 85 },
-      { name: "Docker / CI for ML", level: 82 },
-    ],
-  },
-];
-
-const technologies = [
-  "Python", "SQL", "Pandas", "NumPy", "scikit-learn", "XGBoost",
-  "TensorFlow", "PyTorch", "spaCy", "dbt", "Airflow", "Snowflake",
-  "BigQuery", "PostgreSQL", "Kafka", "Docker", "MLflow", "Evidently",
-  "Plotly", "Tableau", "Power BI", "Git",
+const allSkills = [
+  { name: "Python", icon: Code2, color: "text-blue-400" },
+  { name: "SQL", icon: Database, color: "text-orange-400" },
+  { name: "Pandas", icon: Layers, color: "text-purple-400" },
+  { name: "NumPy", icon: Calculator, color: "text-cyan-400" },
+  { name: "scikit-learn", icon: Brain, color: "text-green-400" },
+  { name: "Machine Learning", icon: Brain, color: "text-pink-400" },
+  { name: "Statistics", icon: TrendingUp, color: "text-yellow-400" },
+  { name: "Matplotlib", icon: BarChart3, color: "text-red-400" },
+  { name: "Seaborn", icon: PieChart, color: "text-indigo-400" },
+  { name: "Jupyter", icon: Code2, color: "text-orange-500" },
+  { name: "Git", icon: GitBranch, color: "text-red-500" },
+  { name: "Excel", icon: FileSpreadsheet, color: "text-green-500" },
+  { name: "Data Cleaning", icon: Beaker, color: "text-purple-500" },
+  { name: "EDA", icon: Activity, color: "text-blue-500" },
+  { name: "Feature Engineering", icon: Layers, color: "text-cyan-500" },
+  { name: "Regression", icon: TrendingUp, color: "text-yellow-500" },
+  { name: "Classification", icon: Brain, color: "text-pink-500" },
+  { name: "Clustering", icon: Brain, color: "text-purple-600" },
+  { name: "NLTK", icon: Code2, color: "text-green-600" },
+  { name: "Plotly", icon: BarChart3, color: "text-blue-600" },
+  { name: "Tableau", icon: PieChart, color: "text-orange-600" },
+  { name: "MySQL", icon: Database, color: "text-cyan-600" },
+  { name: "Data Visualization", icon: BarChart3, color: "text-red-600" },
+  { name: "Hypothesis Testing", icon: Beaker, color: "text-indigo-600" },
+  { name: "A/B Testing", icon: Activity, color: "text-pink-600" },
 ];
 
 export const SkillsSection = () => {
@@ -44,47 +47,58 @@ export const SkillsSection = () => {
             My <span className="text-gradient">Skills</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Analytics, ML, and data platform skills I use to move metrics and ship insights.
+            Core skills I've developed through coursework, personal projects, and continuous self-learning.
           </p>
         </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {skillCategories.map((category, catIndex) => (
-            <FloatingCard key={category.title} delay={catIndex * 0.2}>
-              <h3 className="text-xl font-semibold mb-6 text-gradient">{category.title}</h3>
-              {category.skills.map((skill, skillIndex) => (
-                <SkillBar
-                  key={skill.name}
-                  skill={skill.name}
-                  level={skill.level}
-                  delay={catIndex * 0.2 + skillIndex * 0.1}
-                />
-              ))}
-            </FloatingCard>
-          ))}
-        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="text-center mb-16"
         >
-          <h3 className="text-xl font-semibold mb-8">Technologies I Work With</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {technologies.map((tech, index) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="px-4 py-2 rounded-full glass text-sm cursor-default hover:glow-primary transition-shadow"
-              >
-                {tech}
-              </motion.span>
-            ))}
+          <h3 className="text-2xl font-semibold mb-8 text-gradient">My Skillset</h3>
+          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+            {allSkills.map((skill, index) => {
+              const IconComponent = skill.icon;
+              return (
+                <motion.div
+                  key={skill.name}
+                  initial={{ 
+                    opacity: 0, 
+                    x: Math.random() * 400 - 200, 
+                    y: Math.random() * 400 - 200,
+                    rotate: Math.random() * 360,
+                    scale: 0
+                  }}
+                  whileInView={{ 
+                    opacity: 1, 
+                    x: 0, 
+                    y: 0,
+                    rotate: 0,
+                    scale: 1
+                  }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ 
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15,
+                    delay: index * 0.03,
+                    duration: 0.6
+                  }}
+                  whileHover={{ 
+                    scale: 1.15, 
+                    y: -8,
+                    rotate: [0, -5, 5, 0],
+                    transition: { duration: 0.3 }
+                  }}
+                  className="px-5 py-3 rounded-xl glass font-medium text-sm cursor-default hover:glow-primary transition-shadow border border-primary/20 flex items-center gap-2"
+                >
+                  <IconComponent className={`w-5 h-5 ${skill.color}`} />
+                  <span>{skill.name}</span>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </div>

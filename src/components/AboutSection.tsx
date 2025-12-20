@@ -5,18 +5,18 @@ import { Code2, Palette, Rocket } from "lucide-react";
 const highlights = [
   {
     icon: Code2,
-    title: "Analytical Rigor",
-    description: "Hypothesis-driven workflows with reproducible notebooks and tests.",
+    title: "Quick Learner",
+    description: "Rapidly acquiring new tools and techniques through hands-on projects.",
   },
   {
     icon: Palette,
-    title: "Impactful Visuals",
-    description: "Clear storytelling with dashboards and visuals that drive decisions.",
+    title: "Clear Communication",
+    description: "Translating complex analyses into accessible visualizations and insights.",
   },
   {
     icon: Rocket,
-    title: "Operational Rigor",
-    description: "Pipelines monitored for drift, quality, and reliable delivery to stakeholders.",
+    title: "Problem Solver",
+    description: "Tackling real-world challenges with curiosity and analytical thinking.",
   },
 ];
 
@@ -34,8 +34,8 @@ export const AboutSection = () => {
             About <span className="text-gradient">Me</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            I'm a data analyst who loves turning raw, messy data into trustworthy insights and 
-            clear narratives that teams can act on.
+            I'm a fresh graduate eager to start my career in data analytics. I love exploring datasets,
+            building models, and creating visualizations that tell compelling stories.
           </p>
         </motion.div>
 
@@ -64,20 +64,20 @@ export const AboutSection = () => {
             <div>
               <h3 className="text-2xl font-bold mb-4">My Journey</h3>
               <p className="text-muted-foreground mb-4">
-                With years across analytics and ML projects, I've partnered with product, growth, 
-                and ops teams to surface the metrics that matter and ship models that stick.
+                As a recent graduate, I've built my data skills through coursework, online certifications,
+                and self-driven projects. I'm eager to apply what I've learned in a professional setting.
               </p>
               <p className="text-muted-foreground">
-                I balance statistical rigor with pragmatic delivery—automating pipelines, 
-                validating assumptions, and visualizing results so stakeholders stay aligned.
+                I'm passionate about continuous learning—exploring new libraries, experimenting with datasets,
+                and staying current with industry trends. Ready to contribute fresh perspectives and grow with a team.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: "Years in Data", value: "5+" },
-                { label: "Models Shipped", value: "20+" },
-                { label: "Dashboards Delivered", value: "40+" },
-                { label: "Experiments Run", value: "60+" },
+                { label: "Personal Projects", value: "10+" },
+                { label: "Certifications", value: "5+" },
+                { label: "Hours Learning", value: "500+" },
+                { label: "Kaggle Notebooks", value: "15+" },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}

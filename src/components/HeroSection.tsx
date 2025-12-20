@@ -5,10 +5,10 @@ import { ArrowDown } from "lucide-react";
 
 export const HeroSection = () => {
   const heroRoles = [
-    "Data Analyst",
-    "ML Practitioner",
-    "Experimentation Lead",
-    "Analytics Engineer",
+    "Aspiring Data Analyst",
+    "ML Enthusiast",
+    "Data Science Learner",
+    "Analytics Fresher",
   ];
 
   return (
@@ -20,10 +20,29 @@ export const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center text-center"
         >
+          {/* Profile Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary bg-secondary flex items-center justify-center shadow-2xl"
+          >
+            <img
+              src="/profile.jpg"
+              alt="Prajwol Chaulagain"
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                // Fallback to placeholder if image not found
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.parentElement!.innerHTML = '<div class="text-6xl text-primary">PC</div>';
+              }}
+            />
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.3 }}
             className="mb-6"
           >
             <span className="px-4 py-2 rounded-full glass text-sm text-muted-foreground">
@@ -52,8 +71,8 @@ export const HeroSection = () => {
             transition={{ delay: 0.8, duration: 0.6 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
           >
-            I turn messy data into clear decisions with statistical rigor, thoughtful visuals,
-            and production-ready pipelines. Let's uncover the signals that move the business.
+            Fresh graduate passionate about turning data into actionable insights. Through academic projects
+            and self-learning, I'm building a strong foundation in analytics, machine learning, and visualization.
           </motion.p>
 
           <motion.div
