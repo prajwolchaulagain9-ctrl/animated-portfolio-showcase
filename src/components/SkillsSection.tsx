@@ -66,31 +66,25 @@ export const SkillsSection = () => {
                   key={skill.name}
                   initial={{ 
                     opacity: 0, 
-                    x: Math.random() * 400 - 200, 
-                    y: Math.random() * 400 - 200,
-                    rotate: Math.random() * 360,
-                    scale: 0
+                    y: 40,
+                    scale: 0.8
                   }}
                   whileInView={{ 
                     opacity: 1, 
-                    x: 0, 
                     y: 0,
-                    rotate: 0,
                     scale: 1
                   }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ 
                     type: "spring",
-                    stiffness: 100,
-                    damping: 15,
-                    delay: index * 0.03,
-                    duration: 0.6
+                    stiffness: 120,
+                    damping: 12,
+                    delay: index * 0.02,
                   }}
                   whileHover={{ 
-                    scale: 1.15, 
-                    y: -8,
-                    rotate: [0, -5, 5, 0],
-                    transition: { duration: 0.3 }
+                    scale: 1.08, 
+                    y: -4,
+                    transition: { duration: 0.2 }
                   }}
                   className="px-5 py-3 rounded-xl glass font-medium text-sm cursor-default hover:glow-primary transition-shadow border border-primary/20 flex items-center gap-2"
                 >

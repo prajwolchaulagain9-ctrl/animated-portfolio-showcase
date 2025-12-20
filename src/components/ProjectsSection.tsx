@@ -63,10 +63,10 @@ export const ProjectsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Data <span className="text-gradient">Projects</span>
+            Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Personal and academic projects showcasing my learning journey in data analytics and machine learning.
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            Personal and academic projects showcasing hands-on experience with data analytics, machine learning, and visualization.
           </p>
         </motion.div>
 

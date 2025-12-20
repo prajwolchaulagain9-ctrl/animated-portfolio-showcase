@@ -14,21 +14,33 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 glass"
-    >
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <motion.a
-            href="#home"
-            className="text-2xl font-bold text-gradient"
-            whileHover={{ scale: 1.05 }}
-          >
-            Portfolio
-          </motion.a>
+    <>
+      {/* Skip to main content for accessibility */}
+      <a
+        href="#home"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg"
+      >
+        Skip to main content
+      </a>
+      
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="fixed top-0 left-0 right-0 z-50 glass"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <motion.a
+              href="#home"
+              className="text-2xl font-bold text-gradient"
+              whileHover={{ scale: 1.05 }}
+              aria-label="Prajwol Chaulagain - Home"
+            >
+              Prajwol C.
+            </motion.a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -38,8 +50,9 @@ export const Navbar = () => {
                 href={item.href}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="text-muted-foreground hover:text-primary transition-colors relative group"
+                transition={{ delay: i * 0.05, duration: 0.3 }}
+                className="text-muted-foreground hover:text-primary transition-colors relative group font-medium"
+                aria-label={`Navigate to ${item.name} section`}
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
@@ -51,6 +64,8 @@ export const Navbar = () => {
           <button
             className="md:hidden text-foreground"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -68,7 +83,8 @@ export const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors font-medium"
+                aria-label={`Navigate to ${item.name} section`}
               >
                 {item.name}
               </a>
@@ -77,5 +93,6 @@ export const Navbar = () => {
         </motion.div>
       </div>
     </motion.nav>
+    </>
   );
 };

@@ -52,24 +52,33 @@ export const HeroSection = () => {
 
           <AnimatedText
             words={["Hello,", "I'm", "Prajwol"]}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold justify-center mb-4"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold justify-center mb-2"
           />
+          
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="text-xl md:text-2xl font-semibold text-primary mb-4"
+          >
+            Data Analyst • ML Enthusiast • Fresh Graduate
+          </motion.h2>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-2xl md:text-3xl text-muted-foreground mb-6 flex items-center gap-2 justify-center"
+            transition={{ delay: 0.6, duration: 0.5 }}
+            className="text-lg md:text-xl text-muted-foreground/90 mb-2 flex items-center gap-2 justify-center"
           >
-            <span className="text-muted-foreground/80">I am a</span>
-            <RotatingWords words={heroRoles} className="font-semibold" />
+            <span className="text-muted-foreground/70">Currently exploring:</span>
+            <RotatingWords words={heroRoles} className="font-medium text-gradient" />
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
+            transition={{ delay: 0.8, duration: 0.4 }}
+            className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
             Fresh graduate passionate about turning data into actionable insights. Through academic projects
             and self-learning, I'm building a strong foundation in analytics, machine learning, and visualization.
@@ -78,7 +87,7 @@ export const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
+            transition={{ delay: 0.9, duration: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a
