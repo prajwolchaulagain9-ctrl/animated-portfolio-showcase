@@ -5,18 +5,18 @@ import { Code2, Palette, Rocket } from "lucide-react";
 const highlights = [
   {
     icon: Code2,
-    title: "Clean Code",
-    description: "Writing maintainable, scalable code that stands the test of time.",
+    title: "Analytical Rigor",
+    description: "Hypothesis-driven workflows with reproducible notebooks and tests.",
   },
   {
     icon: Palette,
-    title: "Creative Design",
-    description: "Crafting visually stunning interfaces that users love to interact with.",
+    title: "Impactful Visuals",
+    description: "Clear storytelling with dashboards and visuals that drive decisions.",
   },
   {
     icon: Rocket,
-    title: "Fast Delivery",
-    description: "Bringing ideas to life quickly without compromising on quality.",
+    title: "Operational Rigor",
+    description: "Pipelines monitored for drift, quality, and reliable delivery to stakeholders.",
   },
 ];
 
@@ -34,8 +34,8 @@ export const AboutSection = () => {
             About <span className="text-gradient">Me</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            I'm a passionate developer with a keen eye for design and a love for creating 
-            exceptional digital experiences.
+            I'm a data analyst who loves turning raw, messy data into trustworthy insights and 
+            clear narratives that teams can act on.
           </p>
         </motion.div>
 
@@ -64,20 +64,20 @@ export const AboutSection = () => {
             <div>
               <h3 className="text-2xl font-bold mb-4">My Journey</h3>
               <p className="text-muted-foreground mb-4">
-                With years of experience in web development, I've had the privilege of working 
-                on diverse projects ranging from startups to enterprise applications.
+                With years across analytics and ML projects, I've partnered with product, growth, 
+                and ops teams to surface the metrics that matter and ship models that stick.
               </p>
               <p className="text-muted-foreground">
-                I believe in continuous learning and staying up-to-date with the latest 
-                technologies to deliver the best solutions for my clients.
+                I balance statistical rigor with pragmatic delivery—automating pipelines, 
+                validating assumptions, and visualizing results so stakeholders stay aligned.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: "Years Experience", value: "5+" },
-                { label: "Projects Completed", value: "50+" },
-                { label: "Happy Clients", value: "30+" },
-                { label: "Technologies", value: "20+" },
+                { label: "Years in Data", value: "5+" },
+                { label: "Models Shipped", value: "20+" },
+                { label: "Dashboards Delivered", value: "40+" },
+                { label: "Experiments Run", value: "60+" },
               ].map((stat, i) => (
                 <motion.div
                   key={stat.label}

@@ -4,8 +4,8 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "hello@example.com" },
-  { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
+  { icon: Mail, label: "Email", value: "prajwolchaulagain9@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+977 9767996856" },
   { icon: MapPin, label: "Location", value: "San Francisco, CA" },
 ];
 

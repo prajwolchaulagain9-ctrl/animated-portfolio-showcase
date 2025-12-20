@@ -9,10 +9,11 @@ interface SkillBarProps {
 export const SkillBar = ({ skill, level, delay = 0 }: SkillBarProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, x: -40, scale: 0.9 }}
+      whileInView={{ opacity: 1, x: 0, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
+      transition={{ type: "spring", stiffness: 220, damping: 20, delay }}
+      whileHover={{ scale: 1.03 }}
       className="mb-4"
     >
       <div className="flex justify-between mb-2">
@@ -22,11 +23,16 @@ export const SkillBar = ({ skill, level, delay = 0 }: SkillBarProps) => {
       <div className="h-2 bg-secondary rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
-          whileInView={{ width: `${level}%` }}
+          whileInView={{ width: `${level}%`, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: delay + 0.2, ease: "easeOut" }}
+          transition={{
+            type: "spring",
+            stiffness: 180,
+            damping: 18,
+            delay: delay + 0.15,
+          }}
           className="h-full rounded-full"
-          style={{ background: "var(--gradient-primary)" }}
+          style={{ background: "var(--gradient-primary)", transformOrigin: "left" }}
         />
       </div>
     </motion.div>

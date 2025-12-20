@@ -4,28 +4,30 @@ import { FloatingCard } from "./FloatingCard";
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Analytics & ML",
     skills: [
-      { name: "React / Next.js", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "Tailwind CSS", level: 92 },
-      { name: "Framer Motion", level: 85 },
+      { name: "Python (Pandas/NumPy)", level: 95 },
+      { name: "scikit-learn / XGBoost", level: 90 },
+      { name: "Experimentation / A/B Stats", level: 88 },
+      { name: "NLP (spaCy/BERT)", level: 84 },
     ],
   },
   {
-    title: "Backend",
+    title: "Data Engineering",
     skills: [
-      { name: "Node.js", level: 88 },
-      { name: "Python", level: 82 },
-      { name: "PostgreSQL", level: 85 },
-      { name: "GraphQL", level: 78 },
+      { name: "SQL (Postgres/BigQuery)", level: 92 },
+      { name: "dbt / Data Modeling", level: 88 },
+      { name: "Airflow / Orchestration", level: 85 },
+      { name: "Docker / CI for ML", level: 82 },
     ],
   },
 ];
 
 const technologies = [
-  "React", "Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL",
-  "MongoDB", "GraphQL", "Docker", "AWS", "Figma", "Git",
+  "Python", "SQL", "Pandas", "NumPy", "scikit-learn", "XGBoost",
+  "TensorFlow", "PyTorch", "spaCy", "dbt", "Airflow", "Snowflake",
+  "BigQuery", "PostgreSQL", "Kafka", "Docker", "MLflow", "Evidently",
+  "Plotly", "Tableau", "Power BI", "Git",
 ];
 
 export const SkillsSection = () => {
@@ -42,7 +44,7 @@ export const SkillsSection = () => {
             My <span className="text-gradient">Skills</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life.
+            Analytics, ML, and data platform skills I use to move metrics and ship insights.
           </p>
         </motion.div>
 

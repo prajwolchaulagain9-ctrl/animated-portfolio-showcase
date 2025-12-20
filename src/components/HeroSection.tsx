@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { AnimatedText } from "./AnimatedText";
+import { RotatingWords } from "./RotatingWords";
 import { ArrowDown } from "lucide-react";
 
 const containerVariants = {
@@ -20,6 +21,12 @@ const itemVariants = {
 
 export const HeroSection = () => {
   const nameWords = ["Prajwol", "Chaulagain"];
+  const heroRoles = [
+    "Data Analyst",
+    "ML Practitioner",
+    "Experimentation Lead",
+    "Analytics Engineer",
+  ];
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
@@ -27,7 +34,7 @@ export const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 3 }}
           className="flex flex-col items-center text-center"
         >
           {/* Large Profile Photo */}
@@ -38,7 +45,7 @@ export const HeroSection = () => {
             className="w-48 h-48 md:w-64 md:h-64 mx-auto mb-8 rounded-full overflow-hidden border-4 border-primary bg-secondary flex items-center justify-center shadow-2xl"
           >
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop"
+              src=""
               alt="Prajwol Chaulagain"
               className="w-full h-full object-cover"
             />
@@ -62,15 +69,16 @@ export const HeroSection = () => {
             ))}
           </motion.div>
 
-          {/* Title */}
-          <motion.p
+          {/* Title with rotating roles */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="text-2xl md:text-3xl text-muted-foreground mb-8"
+            className="text-2xl md:text-3xl text-muted-foreground mb-8 flex items-center gap-2 justify-center"
           >
-            Creative Developer & Designer
-          </motion.p>
+            <span className="text-muted-foreground/80">I am a</span>
+            <RotatingWords words={heroRoles} className="font-semibold" />
+          </motion.div>
 
           {/* Description */}
           <motion.p
@@ -79,8 +87,8 @@ export const HeroSection = () => {
             transition={{ delay: 1.2, duration: 0.6 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
           >
-            I craft beautiful digital experiences with clean code and creative design. 
-            Let's build something amazing together.
+            I turn messy data into clear decisions with statistical rigor, thoughtful visuals, 
+            and production-ready pipelines. Let's uncover the signals that move the business.
           </motion.p>
 
           {/* CTA Buttons */}
