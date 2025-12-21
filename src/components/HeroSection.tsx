@@ -5,10 +5,10 @@ import { ArrowDown } from "lucide-react";
 
 export const HeroSection = () => {
   const heroRoles = [
-    "Aspiring Data Analyst",
+    "Data Analysis Student",
     "ML Enthusiast",
     "Data Science Learner",
-    "Analytics Fresher",
+    "Future Data Analyst",
   ];
 
   return (
@@ -61,7 +61,7 @@ export const HeroSection = () => {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="text-xl md:text-2xl font-semibold text-primary mb-4"
           >
-            Data Analyst • ML Enthusiast • Fresh Graduate
+            Data Analyst • ML Enthusiast • 2nd Year Student
           </motion.h2>
 
           <motion.div
@@ -80,8 +80,8 @@ export const HeroSection = () => {
             transition={{ delay: 0.8, duration: 0.4 }}
             className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Fresh graduate passionate about turning data into actionable insights. Through academic projects
-            and self-learning, I'm building a strong foundation in analytics, machine learning, and visualization.
+            2nd year bachelor student passionate about turning data into actionable insights. Through coursework,
+            academic projects, and self-learning, I'm building a strong foundation in analytics, machine learning, and data visualization.
           </motion.p>
 
           <motion.div
