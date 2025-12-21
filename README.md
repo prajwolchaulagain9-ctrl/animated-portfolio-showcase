@@ -1,202 +1,139 @@
-# Prajwol Chaulagain - Portfolio
+<div align="center">
 
-Welcome to my professional portfolio website showcasing my work as a Creative Developer & Designer.
+# Animated Portfolio Showcase
 
-## 🎨 Features
+A modern, animated developer portfolio built with React, TypeScript, Tailwind CSS, and shadcn/ui — optimized for speed and designed for delightful interactions.
 
-- **Responsive Design** - Works perfectly on desktop, tablet, and mobile devices
-- **Modern Animations** - Smooth transitions and interactive elements powered by Framer Motion
-- **Dark Mode Support** - Toggle between light and dark themes
-- **Project Showcase** - Highlighting my best work and case studies
-- **Skills Section** - Displaying technical expertise across multiple domains
-- **Contact Integration** - Easy way for potential clients and collaborators to reach out
-- **Performance Optimized** - Fast loading times with optimized assets
+</div>
 
-## 🛠️ Technology Stack
 
-- **Frontend Framework**: React 18 with TypeScript
-- **Build Tool**: Vite 5
-- **Styling**: Tailwind CSS 3
-- **Animations**: Framer Motion
-- **UI Components**: shadcn/ui (Radix UI)
-- **Icons**: Lucide React
-- **Routing**: React Router DOM
+## ✨ Features
+
+- Responsive layout for desktop, tablet, and mobile
+- Smooth animations with Framer Motion and subtle particles
+- Themed UI (light/dark) with accessible shadcn/ui components
+- Project showcase, skills with progress bars, and contact section
+- Fast builds and HMR with Vite
+
+## 🧰 Tech Stack
+
+- React 18 + TypeScript
+- Vite 5
+- Tailwind CSS 3 (+ tailwind-merge, tailwindcss-animate)
+- shadcn/ui (Radix UI)
+- Framer Motion, Lucide Icons
+- React Router, TanStack Query, Recharts
 
 ## 📦 Project Structure
 
 ```
 src/
-├── components/          # Reusable UI components
-│   ├── HeroSection.tsx
-│   ├── AboutSection.tsx
-│   ├── ProjectsSection.tsx
-│   ├── SkillsSection.tsx
-│   ├── ContactSection.tsx
-│   └── ...
-├── pages/              # Page components
-│   └── Index.tsx
-├── App.tsx             # Main app component
-├── main.tsx            # Entry point
-└── index.css           # Global styles
+├─ components/
+│  ├─ HeroSection.tsx
+│  ├─ AboutSection.tsx
+│  ├─ ProjectsSection.tsx
+│  ├─ SkillsSection.tsx
+│  ├─ ContactSection.tsx
+│  └─ ui/                  # shadcn/ui primitives
+├─ pages/
+│  ├─ Index.tsx
+│  └─ NotFound.tsx
+├─ hooks/                  # custom hooks
+├─ lib/                    # utilities
+├─ App.tsx
+├─ main.tsx
+└─ index.css
 ```
+
+Path alias: import from `@` to resolve `src` (configured in `vite.config.ts`).
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn
 
-### Installation
+- Node.js ≥ 18.0.0 (Vite 5 requires Node 18+)
+- npm ≥ 9 (or pnpm/yarn)
+
+### Install & Run (local)
 
 ```bash
-# Clone the repository
-git clone <repository-url>
-
-# Navigate to project directory
-cd animated-portfolio-showcase
-
-# Install dependencies
+# install deps
 npm install
 
-# Start development server
+# start dev server (http://localhost:5173)
 npm run dev
+
+# type-check and lint
+npm run lint
 ```
 
-The portfolio will be available at `http://localhost:5173`
-
-### Build for Production
+Optional (if you use Bun):
 
 ```bash
-npm run build
+bun install
+bun run dev
 ```
 
-This creates an optimized production build in the `dist` folder.
+### Build & Preview
 
-## 📝 Customization
+```bash
+# production build to dist/
+npm run build
 
-### Update Your Information
+# preview the production build locally
+npm run preview
+```
 
-Edit the following files to personalize the portfolio:
+### Available Scripts
 
-- **HeroSection.tsx** - Your name and title
-- **AboutSection.tsx** - About me description
-- **ProjectsSection.tsx** - Your projects
-- **SkillsSection.tsx** - Technical skills
-- **ContactSection.tsx** - Contact information
-- **index.html** - Page title and metadata
+- `dev` — run the Vite dev server
+- `build` — build for production
+- `build:dev` — build in development mode (faster, unminified)
+- `preview` — preview the production build
+- `lint` — run ESLint across the project
 
-### Change Your Photo
+## 🧑‍🎨 Customization
 
-1. Add your photo to `public/` folder
-2. Update the image URL in `HeroSection.tsx`
-
-### Update Colors
-
-Edit Tailwind CSS configuration in `tailwind.config.ts` to match your brand colors.
+- Edit content:
+	- `src/components/HeroSection.tsx` — name, title, intro
+	- `src/components/AboutSection.tsx` — about text
+	- `src/components/ProjectsSection.tsx` — projects
+	- `src/components/SkillsSection.tsx` — skills
+	- `src/components/ContactSection.tsx` — contact details
+- Update metadata: `index.html` (title, meta)
+- Branding/colors: `tailwind.config.ts`
+- Assets: place images in `public/`
 
 ## 🌐 Deployment
 
-### Deploy to Vercel (Recommended)
+### Vercel (recommended)
 
 ```bash
-npm install -g vercel
-vercel
+npm run build
+# then import the repo on vercel.com and set output dir to "dist"
 ```
 
-Follow the prompts to deploy your portfolio.
+### Netlify
 
-### Deploy to Netlify
+- Build command: `npm run build`
+- Publish directory: `dist`
 
-1. Push your code to GitHub
-2. Connect your repo to Netlify
-3. Set build command: `npm run build`
-4. Set publish directory: `dist`
+### GitHub Pages
 
-### Deploy to GitHub Pages
+- Run `npm run build` and publish `dist/`
+- For SPA routing, configure your host to serve `index.html` on 404s
 
-1. Build the project: `npm run build`
-2. Push the `dist` folder to your GitHub Pages branch
+## 🛠️ Troubleshooting
 
-## 📧 Contact
-
-Feel free to reach out through the contact section on the portfolio or connect on social media!
+- Ensure Node 18+ (`node -v`). If not, upgrade via nvm or official installer.
+- Port 5173 busy? Stop the other process or change the port in `vite.config.ts`.
+- CSS not applying? Confirm Tailwind is loaded (`index.css`) and the classes exist.
 
 ## 📄 License
 
-This project is open source and available under the MIT License.
+No license file is present in this repository. If you intend to open-source this project, add a `LICENSE` file (MIT is a common choice).
 
 ---
 
-Built with ❤️ by Prajwol Chaulagain
+Built with ❤️
 
-## Project info
-
-**URL**: https://lovable.dev/projects/060238ad-92a7-41b1-ae67-10985f977acd
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/060238ad-92a7-41b1-ae67-10985f977acd) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/060238ad-92a7-41b1-ae67-10985f977acd) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
