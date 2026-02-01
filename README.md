@@ -1,8 +1,8 @@
 <div align="center">
 
-# Animated Portfolio Showcase
+# Animated AI/ML Portfolio Showcase
 
-A modern, animated developer portfolio built with React, TypeScript, Tailwind CSS, and shadcn/ui — optimized for speed and designed for delightful interactions.
+An advanced, animated AI/ML engineer portfolio built with React, TypeScript, Tailwind CSS, and shadcn/ui — showcasing machine learning expertise with beautiful interactions.
 
 </div>
 
@@ -10,10 +10,10 @@ A modern, animated developer portfolio built with React, TypeScript, Tailwind CS
 ## ✨ Features
 
 - Responsive layout for desktop, tablet, and mobile
-- Smooth animations with Framer Motion and subtle particles
+- Smooth animations with Framer Motion and particle effects
 - Themed UI (light/dark) with accessible shadcn/ui components
-- Project showcase, skills with progress bars, and contact section
-- Fast builds and HMR with Vite
+- AI/ML project showcase, comprehensive skills display, and contact section
+- Optimized for speed and performance with Vite
 
 ## 🧰 Tech Stack
 
