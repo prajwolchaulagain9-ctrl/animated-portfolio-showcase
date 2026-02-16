@@ -6,17 +6,17 @@
 
 @layer base {
   :root {
-    --background: 220 20% 4%;
+    --background: 220 20% 3%;
     --foreground: 210 40% 98%;
 
-    --card: 220 20% 8%;
+    --card: 220 20% 7%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 220 20% 8%;
+    --popover: 220 20% 7%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 175 80% 50%;
-    --primary-foreground: 220 20% 4%;
+    --primary: 210 100% 50%;
+    --primary-foreground: 220 20% 3%;
 
     --secondary: 220 20% 12%;
     --secondary-foreground: 210 40% 98%;
@@ -24,25 +24,25 @@
     --muted: 220 15% 15%;
     --muted-foreground: 215 20% 55%;
 
-    --accent: 280 80% 60%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 25 100% 55%;
+    --accent-foreground: 220 20% 3%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 220 15% 18%;
     --input: 220 15% 18%;
-    --ring: 175 80% 50%;
+    --ring: 210 100% 50%;
 
     --radius: 0.75rem;
 
     /* Custom design tokens */
-    --glow-primary: 0 0 60px hsl(175 80% 50% / 0.3);
-    --glow-accent: 0 0 60px hsl(280 80% 60% / 0.2);
-    --gradient-primary: linear-gradient(135deg, hsl(175 80% 50%), hsl(200 80% 60%));
-    --gradient-accent: linear-gradient(135deg, hsl(280 80% 60%), hsl(320 80% 60%));
-    --gradient-dark: linear-gradient(180deg, hsl(220 20% 4%), hsl(220 25% 8%));
-    --glass-bg: hsl(220 20% 8% / 0.7);
+    --glow-primary: 0 0 60px hsl(210 100% 50% / 0.4);
+    --glow-accent: 0 0 60px hsl(25 100% 55% / 0.3);
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(200 100% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 100% 55%), hsl(40 100% 60%));
+    --gradient-dark: linear-gradient(180deg, hsl(220 20% 3%), hsl(220 25% 8%));
+    --glass-bg: hsl(220 20% 7% / 0.7);
     --glass-border: hsl(220 15% 25% / 0.5);
   }
 }
@@ -73,6 +73,7 @@
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
+    transform-style: preserve-3d;
   }
 
   .glow-primary {
@@ -97,6 +98,18 @@
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
   }
 }
 

@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { RotatingWords } from "./RotatingWords";
 import { AnimatedText } from "./AnimatedText";
 import { ArrowDown } from "lucide-react";
+import { Three3DBackground } from "./Three3DBackground";
+import { Suspense } from "react";
 
 export const HeroSection = () => {
   const heroRoles = [
@@ -12,8 +14,11 @@ export const HeroSection = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
-      <div className="container mx-auto px-6">
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
+      <Suspense fallback={null}>
+        <Three3DBackground />
+      </Suspense>
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}

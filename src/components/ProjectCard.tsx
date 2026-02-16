@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import { useState } from "react";
 
 interface ProjectCardProps {
   title: string;
@@ -20,6 +21,30 @@ export const ProjectCard = ({
   githubUrl,
   delay = 0 
 }: ProjectCardProps) => {
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const rotateXValue = ((y - centerY) / centerY) * -8;
+    const rotateYValue = ((x - centerX) / centerX) * 8;
+    
+    setRotateX(rotateXValue);
+    setRotateY(rotateYValue);
+  };
+
+  const handleMouseLeave = () => {
+    setRotateX(0);
+    setRotateY(0);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 60, rotateY: -10 }}
@@ -34,6 +59,16 @@ export const ProjectCard = ({
       whileHover={{ 
         y: -15,
         transition: { duration: 0.3 }
+      }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transformStyle: "preserve-3d",
+        perspective: "1000px",
+      }}
+      animate={{
+        rotateX: rotateX,
+        rotateY: rotateY,
       }}
       className="glass rounded-2xl overflow-hidden group cursor-pointer"
     >
